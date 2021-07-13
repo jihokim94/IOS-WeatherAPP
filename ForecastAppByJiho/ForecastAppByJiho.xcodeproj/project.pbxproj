@@ -13,6 +13,7 @@
 		A04F4E09269C69B400B32707 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04F4E07269C69B400B32707 /* Main.storyboard */; };
 		A04F4E0B269C69B400B32707 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04F4E0A269C69B400B32707 /* Assets.xcassets */; };
 		A04F4E0E269C69B400B32707 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04F4E0C269C69B400B32707 /* LaunchScreen.storyboard */; };
+		A0C9D319269C6EC200A5EA2C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9D318269C6EC200A5EA2C /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A04F4E0A269C69B400B32707 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A04F4E0D269C69B400B32707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A04F4E0F269C69B400B32707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0C9D318269C6EC200A5EA2C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A04F4E0A269C69B400B32707 /* Assets.xcassets */,
 				A04F4E0C269C69B400B32707 /* LaunchScreen.storyboard */,
 				A04F4E0F269C69B400B32707 /* Info.plist */,
+				A0C9D318269C6EC200A5EA2C /* Common.swift */,
 			);
 			path = ForecastAppByJiho;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C9D319269C6EC200A5EA2C /* Common.swift in Sources */,
 				A04F4E06269C69B400B32707 /* ViewController.swift in Sources */,
 				A04F4E02269C69B400B32707 /* AppDelegate.swift in Sources */,
 				A04F4E04269C69B400B32707 /* SceneDelegate.swift in Sources */,
