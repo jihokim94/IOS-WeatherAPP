@@ -6,14 +6,69 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var listTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let location  = CLLocation(latitude:37.498095, longitude:127.02861)
+        WeatherDataSource.shared.fetch(location: location) {
+            self.listTableView.reloadData()
+            dump(WeatherDataSource.shared.summary?.weather)
+        }
     }
 
 
 }
 
+extension ViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      // 섹션당 들어가야할 로우 개수 리턴
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return WeatherDataSource.shared.forecastList.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //데이터 섹션에 집어 넣기
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell", for: indexPath) as! SummaryTableViewCell
+            if let weather =  WeatherDataSource.shared.summary?.weather.first , let main = WeatherDataSource.shared.summary?.main {
+                cell.weatherImageView.image = UIImage(named: weather.icon)
+                print(weather.icon)
+                
+                cell.statusLabel.text = weather.description
+                print(weather.description)
+                cell.minMaxLabel.text = "최고\(main.temp_min.temperatureString)  최저\(main.temp_max.temperatureString)"
+                cell.currentTemperatureLabel.text = main.temp.temperatureString
+            }
+
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastTableViewCell", for: indexPath) as! ForecastTableViewCell
+        
+        let target = WeatherDataSource.shared.forecastList[indexPath.row]
+        cell.dateLabel.text  = target.date.dateString
+        cell.timeLabel.text  = target.date.timeString
+        cell.weatherImageView.image = UIImage(named: target.icon)
+        cell.statusLabel.text = target.weather.description
+        cell.temperaturelabel.text = target.temperature.temperatureString
+            return cell
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2 // 섹션 개수
+    }
+    
+    
+}
