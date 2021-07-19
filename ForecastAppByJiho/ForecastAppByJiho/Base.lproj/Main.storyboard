@@ -175,13 +175,19 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Z06-Qv-ujC"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iuu-L6-fdI">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iuu-L6-fdI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="57U-xH-j8i"/>
                             <constraint firstItem="lGH-TQ-k2Q" firstAttribute="top" secondItem="UP6-uD-drM" secondAttribute="bottom" id="96Z-U5-mJX"/>
                             <constraint firstAttribute="bottom" secondItem="HoR-eb-Evd" secondAttribute="bottom" id="AtS-vw-5U1"/>
                             <constraint firstItem="HoR-eb-Evd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D3K-fW-7aL"/>
+                            <constraint firstItem="iuu-L6-fdI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="E7P-Tc-gpu"/>
                             <constraint firstItem="aCF-Wf-HJ3" firstAttribute="leading" secondItem="HoR-eb-Evd" secondAttribute="leading" id="EMF-uw-C03"/>
                             <constraint firstItem="HoR-eb-Evd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LgY-q1-rsC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lGH-TQ-k2Q" secondAttribute="bottom" id="Ohg-tZ-9Fh"/>
@@ -198,6 +204,7 @@
                     </view>
                     <connections>
                         <outlet property="listTableView" destination="lGH-TQ-k2Q" id="9MF-fT-VBb"/>
+                        <outlet property="loader" destination="iuu-L6-fdI" id="5fD-w9-I7f"/>
                         <outlet property="locationLabel" destination="jB2-6g-xQ4" id="LKZ-BH-ejD"/>
                     </connections>
                 </viewController>

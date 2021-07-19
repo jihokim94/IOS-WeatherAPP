@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     @IBOutlet weak var locationLabel: UILabel!
+ 
     
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var topInset = CGFloat(0.0)
     
@@ -36,6 +38,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        listTableView.alpha = 0.0
+        loader.alpha = 1.0
+        
         listTableView.backgroundColor = .clear
         listTableView.separatorStyle = .none
         listTableView.showsVerticalScrollIndicator = false
@@ -51,6 +56,11 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: WeatherDataSource.weatherInfoDidUpdate, object: nil, queue: .main) { (noti) in
             self.listTableView.reloadData()
             self.locationLabel.text = LocationManager.shared.currentLocationTitle
+            
+            UIView.animate(withDuration: 0.3) {
+                self.listTableView.alpha = 1.0
+                self.loader.alpha = 0.0
+            }
         }
         
     }

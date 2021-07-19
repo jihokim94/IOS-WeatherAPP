@@ -29,7 +29,6 @@ struct Forecast : Codable {
     
     let list : [ListItem]
     
-    
 }
 
 struct ForecastData { // 테이블에 잘 넣을 수 있도록 구조체 하나 더만듬
