@@ -12,11 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
     
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    
     var topInset = CGFloat(0.0)
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        // 테이블뷰 마진탑 주기
         if topInset == 0.0 {
             let firstIndexPath = IndexPath(row: 0, section: 0)
             if let cell = listTableView.cellForRow(at: firstIndexPath){ // 첫번째 셀 가져오기
@@ -37,11 +40,19 @@ class ViewController: UIViewController {
         listTableView.separatorStyle = .none
         listTableView.showsVerticalScrollIndicator = false
         
-        let location  = CLLocation(latitude:37.498095, longitude:127.02861)
-        WeatherDataSource.shared.fetch(location: location) {
+//        let location  = CLLocation(latitude:37.498095, longitude:127.02861)
+//        WeatherDataSource.shared.fetch(location: location) {
+//            self.listTableView.reloadData()
+//            dump(WeatherDataSource.shared.summary?.weather)
+//        }
+        
+        LocationManager.shared.updateLocation()
+        
+        NotificationCenter.default.addObserver(forName: WeatherDataSource.weatherInfoDidUpdate, object: nil, queue: .main) { (noti) in
             self.listTableView.reloadData()
-            dump(WeatherDataSource.shared.summary?.weather)
+            self.locationLabel.text = LocationManager.shared.currentLocationTitle
         }
+        
     }
 
 

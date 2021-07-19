@@ -11,11 +11,20 @@ import CoreLocation
 class WeatherDataSource {
     static let shared = WeatherDataSource()
     private init(){
-        
+        NotificationCenter.default.addObserver(forName: LocationManager.currentLocationDidUpdate, object: nil, queue: .main) { (noti) in
+            if let location = noti.userInfo?["location"] as? CLLocation {
+                self.fetch(location: location) {
+                    // 이 노티피케이션이 전달되는 시점에는 ui가 업데이트 되어야함
+                    NotificationCenter.default.post(name: Self.weatherInfoDidUpdate, object: nil)
+                }
+            }
+        }
     }
     
     var summary : CurrentWeather?
     var forecastList = [ForecastData]()
+    
+    static let weatherInfoDidUpdate = Notification.Name(rawValue: "weatherInfoDidUpdate")
     
     let apiQueue = DispatchQueue(label: "ApiQueue" , attributes: [.concurrent])
     

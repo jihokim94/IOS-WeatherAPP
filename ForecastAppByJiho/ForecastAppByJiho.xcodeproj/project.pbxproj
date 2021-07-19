@@ -19,6 +19,7 @@
 		A04F4E09269C69B400B32707 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04F4E07269C69B400B32707 /* Main.storyboard */; };
 		A04F4E0B269C69B400B32707 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04F4E0A269C69B400B32707 /* Assets.xcassets */; };
 		A04F4E0E269C69B400B32707 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04F4E0C269C69B400B32707 /* LaunchScreen.storyboard */; };
+		A064DF6026A559A700C321DF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064DF5F26A559A700C321DF /* LocationManager.swift */; };
 		A08BAE01269DA5E700098DA0 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BAE00269DA5E700098DA0 /* SummaryTableViewCell.swift */; };
 		A08BAE03269DA62F00098DA0 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BAE02269DA62F00098DA0 /* ForecastTableViewCell.swift */; };
 		A0C9D319269C6EC200A5EA2C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9D318269C6EC200A5EA2C /* Common.swift */; };
@@ -40,6 +41,7 @@
 		A04F4E0A269C69B400B32707 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A04F4E0D269C69B400B32707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A04F4E0F269C69B400B32707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A064DF5F26A559A700C321DF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A08BAE00269DA5E700098DA0 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		A08BAE02269DA62F00098DA0 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		A0C9D318269C6EC200A5EA2C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		A04F4E00269C69B400B32707 /* ForecastAppByJiho */ = {
 			isa = PBXGroup;
 			children = (
+				A064DF5E26A5599300C321DF /* Location */,
 				A03B41A426A54B3A0053045B /* Formatter */,
 				A01547B326A038D50092E615 /* Data */,
 				A01547AC26A0385E0092E615 /* Model */,
@@ -118,6 +121,14 @@
 				A0C9D318269C6EC200A5EA2C /* Common.swift */,
 			);
 			path = ForecastAppByJiho;
+			sourceTree = "<group>";
+		};
+		A064DF5E26A5599300C321DF /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A064DF5F26A559A700C321DF /* LocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		A08BADFF269DA5C200098DA0 /* cell */ = {
@@ -220,6 +231,7 @@
 				A01547B526A038E70092E615 /* WeatherDataSource.swift in Sources */,
 				A08BAE01269DA5E700098DA0 /* SummaryTableViewCell.swift in Sources */,
 				A04F4E04269C69B400B32707 /* SceneDelegate.swift in Sources */,
+				A064DF6026A559A700C321DF /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
